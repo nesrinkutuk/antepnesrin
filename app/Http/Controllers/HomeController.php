@@ -1,16 +1,21 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    function ShowView() {
-        $Name = "Nesrin Kütük";
-        $Meslek = "Civil engineer student";
-        $City = "Gaziantep";
-
-        return view('hakkimda', compact('Name','Meslek','City'));
+    public function ShowView()
+    {
+        //$users = DB::table('products')->get();
+        $products = Product::with('user')->get();
+        return view('hakkimda', compact('products'));
     }
+
 }
+
+
