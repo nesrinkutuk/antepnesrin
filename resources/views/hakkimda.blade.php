@@ -29,11 +29,11 @@ tr:nth-child(even) {
     <th>Email</th>
     <th>Şifre</th>
   </tr>
-    @foreach($products as $product)
+    @foreach($users as $user)
   <tr>
-      <td>{{$product->name}}</td>
-      <td>{{$product->price}}</td>
-      <td>{{$product->user[0]->name}}</td>
+      <td>{{$user->name}}</td>
+      <td>{{$user->price}}</td>
+      
   </tr>
     @endforeach
 </table>
